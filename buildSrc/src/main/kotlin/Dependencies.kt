@@ -62,6 +62,7 @@ object Versions {
     val junit = "4.13.2"
     val androidx_espresso = "3.4.0"
     val androidx_testing = "1.1.3"
+    val core_testing = "2.0.0"
     //</editor-fold>
 
     // <editor-fold desc="tools">
@@ -133,63 +134,6 @@ object Deps {
     val androidx_hilt_navigation = "androidx.hilt:hilt-navigation-compose:${Versions.hilt_nav_compose_version}"
     // </editor-fold>
 
-    // <editor-fold desc="Dagger"
-    val androidx_dagger_core = "com.google.dagger:dagger:${Versions.dagger_version}"
-    val androidx_dagger_core_annotation = "com.google.dagger:dagger-compiler:${Versions.dagger_version}"
-    val androidx_dagger = "com.google.dagger:dagger-android:${Versions.dagger_version}"
-    val androidx_dagger_support = "com.google.dagger:dagger-android-support:${Versions.dagger_version}"
-    val androidx_dagger_annotation = "com.google.dagger:dagger-android-processor:${Versions.dagger_version}"
-
-
-    // </editor-fold>
-
-    // <editor-fold desc = "Compose"
-
-    val compose_ui = "androidx.compose.ui:ui:${Versions.compose_version}"
-    val compose_ui_tooling = "androidx.compose.ui:ui-tooling:${Versions.compose_version}"
-    val compose_foundation = "androidx.compose.foundation:foundation:${Versions.compose_version}"
-    val compose_material = "androidx.compose.material:material:${Versions.compose_version}"
-
-    val compose_material_icons_core =
-        "androidx.compose.material:material-icons-core:${Versions.compose_version}"
-    val compose_material_icons_ext =
-        "androidx.compose.material:material-icons-extended:${Versions.compose_version}"
-
-    val compose_activity_integration = "androidx.activity:activity-compose:1.3.1"
-    val compose_viewmodel_integration =
-        "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07"
-
-    val compose_livedata = "androidx.compose.runtime:runtime-livedata:${Versions.compose_version}"
-    val compose_runtime_rxjava =
-        "androidx.compose.runtime:runtime-rxjava2:${Versions.compose_version}"
-
-    val compose_test = "androidx.compose.ui:ui-test-junit4:${Versions.compose_version}"
-
-    //</editor-fold>
-
-    // <editor-fold desc="Room"
-    val androidx_room_runtime = "androidx.room:room-runtime:${Versions.room_version}"
-    val androidx_room_kapt = "androidx.room:room-compiler:${Versions.room_version}"
-    val androidx_room_ktx = "androidx.room:room-ktx:${Versions.room_version}"
-    //</editor-fold>
-
-    // <editor-fold desc="Paging"
-    val androidx_paging_runtime_ktx =
-        "androidx.paging:paging-runtime-ktx:${Versions.paging_version}"
-
-    // alternatively - without Android dependencies for tests
-    val androidx_paging_common_test = "androidx.paging:paging-common-ktx:${Versions.paging_version}"
-
-    // optional - RxJava2 support
-    val androidx_paging_rxjava2 = "androidx.paging:paging-rxjava2-ktx:${Versions.paging_version}"
-
-    // optional - RxJava3 support
-    val androidx_paging_rxjava3 = "androidx.paging:paging-rxjava3:${Versions.paging_version}"
-
-    // optional - Jetpack Compose integration
-    val androidx_paging_compose =
-        "androidx.paging:paging-compose:${Versions.paging_compose_version}"
-    //</editor-fold>
 
     // <editor-fold desc="Retrofit"
     val androidx_retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit_version}"
@@ -213,6 +157,7 @@ object Deps {
     // <editor-fold desc ="Junit"
     val testlib_junit = "junit:junit:${Versions.junit}"
     val test_junit_ext = "androidx.test.ext:junit:${Versions.androidx_testing}"
+    val core_testing= "androidx.arch.core:core-testing:${Versions.core_testing}"
     // </editor-fold>
 
     // <editor-fold desc="Espresso"

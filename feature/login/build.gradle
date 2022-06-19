@@ -25,4 +25,7 @@ dependencies {
     implementation Deps.androidx_hilt
     implementation Deps.androidx_hilt_navigation
     kapt Deps.androidx_hilt_kapt
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation Deps.core_testing
 }

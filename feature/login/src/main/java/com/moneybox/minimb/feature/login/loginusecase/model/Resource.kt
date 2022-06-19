@@ -1,6 +1,5 @@
 package com.moneybox.minimb.feature.login.loginusecase.model
 
-
 typealias SimpleResource = Resource<Unit>
 sealed class Resource<T>(val data: T? = null, val uiText: UiText? = null) {
     class Success<T>(data: T?): Resource<T>(data)

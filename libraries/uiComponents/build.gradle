@@ -54,5 +54,6 @@ dependencies {
 
     testImplementation (Deps.testlib_junit)
     androidTestImplementation (Deps.testandroidx_runner)
+    testImplementation (Deps.core_testing)
     androidTestImplementation (Deps.testandroidx_espressocore)
 }
