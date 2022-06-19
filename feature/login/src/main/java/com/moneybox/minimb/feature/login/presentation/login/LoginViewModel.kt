@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.moneybox.minimb.feature.login.data.LoginRepository
 import com.moneybox.minimb.feature.login.domain.models.LoginResponse
+import com.moneybox.minimb.feature.login.loginusecase.LoginUseCase
 import com.moneybox.minimb.network.ApiResponseResult
 import com.moneybox.minimb.network.NetworkConstants
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,7 +19,7 @@ import javax.inject.Inject
 /*Email: jaeren+androidtest@moneyboxapp.com
        Password: P455word12*/
 @HiltViewModel
-class LoginViewModel @Inject constructor(private val loginRepository: LoginRepository, private val sharedPreferences: SharedPreferences) : ViewModel() {
+class LoginViewModel @Inject constructor(private val loginUseCase: LoginUseCase, private val sharedPreferences: SharedPreferences) : ViewModel() {
 
     private val _loginResult = MutableLiveData<ApiResponseResult<LoginResponse>>()
     val loginResult = _loginResult
