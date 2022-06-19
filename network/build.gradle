@@ -1,0 +1,18 @@
+plugins {
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
+}
+
+android {
+}
+
+dependencies {
+
+    implementation project(':libraries:uiComponents')
+
+    api Deps.androidx_retrofit
+    api Deps.androidx_retrofit_gson_conv
+    api Deps.androidx_retrofit_mock
+    api Deps.androidx_retrofit_adapter
+    api Deps.androidx_okhttp_interceptor
+}

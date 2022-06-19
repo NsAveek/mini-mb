@@ -1,0 +1,55 @@
+plugins {
+    id("com.android.library")
+    id("kotlin-android")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
+    id("androidx.navigation.safeargs.kotlin")
+}
+
+android {
+    buildFeatures {
+        dataBinding true
+    }
+    kapt {
+        correctErrorTypes = true
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    // HILT
+    api Deps.androidx_hilt
+    api Deps.androidx_hilt_navigation
+    kapt Deps.androidx_hilt_kapt
+    // ANDROIDX-CORE
+    api Deps.androidx_core
+    api Deps.androidx_appcompat
+    api Deps.androidx_recyclerview
+//    api Deps.androidx_fragment_ktx
+    api Deps.viewModel_ktx
+    api Deps.androidx_activity_ktx
+    api Deps.androidx_appcompat
+    api Deps.androidx_material
+    api Deps.androidx_constraintlayout
+    api Deps.androidx_navigation_fragment
+    api Deps.androidx_navigation_ui
+//    api Deps.androidx_lifecycle_livedata
+//    api Deps.androidx_lifecycle_viewmodel
+
+    // GLIDE
+    api Deps.glide_version
+    kapt Deps.glide_kapt
+    // GSON
+    api Deps.gson_version
+
+
+    testImplementation (Deps.testlib_junit)
+    androidTestImplementation (Deps.testandroidx_runner)
+    androidTestImplementation (Deps.testandroidx_espressocore)
+}

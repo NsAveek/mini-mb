@@ -1,4 +1,8 @@
 package com.moneybox.minimb.data
 
-class MiniMbApplication {
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class MiniMbApplication : Application() {
 }

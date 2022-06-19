@@ -14,3 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "mini-mb"
 include ':app'
+include ':libraries:uiComponents'
+include ':feature:login'
+include ':feature:products'
+include ':network'

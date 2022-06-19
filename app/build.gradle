@@ -1,15 +1,17 @@
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
-    compileSdk 31
+    compileSdk Config.compileSdk
 
     defaultConfig {
         applicationId "com.moneybox.minimb"
-        minSdk 21
-        targetSdk 31
+        minSdk Config.minSdk
+        targetSdk Config.targetSdk
         versionCode 1
         versionName "8.35.0"
 
@@ -31,13 +33,21 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.google.code.gson:gson:2.9.0'
-    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
-    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation project(':libraries:uiComponents')
+    implementation project(':feature:login')
+    implementation project(':feature:products')
+    implementation project(':network')
+
+    implementation Deps.androidx_core
+    implementation Deps.androidx_retrofit
+    implementation Deps.androidx_retrofit_gson_conv
+    implementation Deps.gson_version
+//    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+//    implementation 'androidx.appcompat:appcompat:1.4.1'
 }
