@@ -9,10 +9,7 @@ class ConstantsClass {
         LOG_IN_RESPONSE,
         IS_LOGGED_IN,
         AUTH_TOKEN,
-        USER_NAME,
-        BACKGROUND_LOCATION_PERMITTED,
-        GET_PROFILE_RESPONSE,
-        GET_ATTENDANCE_STATUS_RESPONSE
+        USER_NAME
     }
 
     enum class ResponseCode{

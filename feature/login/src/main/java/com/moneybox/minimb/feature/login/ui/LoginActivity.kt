@@ -8,9 +8,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
-import com.moneybox.minimb.feature.login.utilities.LoginActivityHandler
 import com.moneybox.minimb.feature.login.R
 import com.moneybox.minimb.feature.login.databinding.ActivityLoginBinding
+import com.moneybox.minimb.feature.login.utilities.LoginActivityHandler
 import com.moneybox.minimb.feature.login.utilities.Utils.isNetworkAvailable
 import com.moneybox.minimb.network.ApiResponseResult
 import com.moneybox.minimb.network.ILogger
@@ -23,9 +23,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     @Inject
     lateinit var logger : ILogger
-
-
     private val loginViewModel : LoginViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -57,10 +56,7 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this@LoginActivity, "Login Clicked", Toast.LENGTH_LONG).show()
                 when(response.status){
                     ApiResponseResult.Status.SUCCESS ->{
-                        startActivity(
-                            Intent("com.moneybox.minimb.feature.products.open")
-                                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-                                .setPackage(this@LoginActivity.packageName))
+                        loginViewModel.storeLoginResponse(response.data)
                     }
                     ApiResponseResult.Status.ERROR ->{
                         binding.progressbarLogin.visibility = View.GONE
@@ -71,6 +67,16 @@ class LoginActivity : AppCompatActivity() {
                         binding.progressbarLogin.visibility = View.VISIBLE
                         logger.debug(message = "Login Response Loading")
                     }
+                }
+            })
+            loginResultStored.observe(this@LoginActivity, Observer{ response ->
+                if (response) {
+                    binding.progressbarLogin.visibility = View.GONE
+                    startActivity(
+                        Intent("com.moneybox.minimb.feature.products.open")
+                            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                            .setPackage(this@LoginActivity.packageName)
+                    )
                 }
             })
         }

@@ -10,5 +10,5 @@ import retrofit2.http.POST
 interface ProductDataService {
 
     @GET("investorproducts")
-    suspend fun loginRequest(@Body user : Map<String , String>) : Response<AllProductsResponse>
+    suspend fun fetchPlanRequest() : Response<AllProductsResponse>
 }

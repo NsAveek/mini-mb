@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder
 import com.moneybox.minimb.network.BuildConfig
 import com.moneybox.minimb.network.ILogger
 import com.moneybox.minimb.network.LoggerNetworkModule
+import com.moneybox.minimb.network.NetworkConstants
 import com.moneybox.minimb.network.core.INetworkCoreDataService.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -26,10 +27,9 @@ object NetworkCoreServiceModule {
     @Singleton
     fun providesLogger(): ILogger = LoggerNetworkModule()
 
-
     @Provides
     @Singleton
-    fun provideRetrofitInstance(): Retrofit {
+    fun provideRetrofitInstance(): Retrofit.Builder {
         val logger = HttpLoggingInterceptor()
         logger.level = HttpLoggingInterceptor.Level.BASIC
 
@@ -44,9 +44,9 @@ object NetworkCoreServiceModule {
             .create()
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
-            .client(clientBuilder)
+//            .client(clientBuilder)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .build()
+
     }
 }

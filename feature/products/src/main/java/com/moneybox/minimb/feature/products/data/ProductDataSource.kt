@@ -10,10 +10,10 @@ import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class ProductDataSource @Inject constructor(private val service : ProductDataService) {
-    suspend fun login(userMap: HashMap<String, String>): Flow<ApiResponseResult<AllProductsResponse>> {
+    suspend fun fetchPlanValue(): Flow<ApiResponseResult<AllProductsResponse>> {
         return flow {
             emit(ApiResponseResult.loading())
-            val result = service.loginRequest(userMap)
+            val result = service.fetchPlanRequest()
             if (result.isSuccessful) {
                 emit(ApiResponseResult.success(data = result.body()))
             } else {
@@ -25,12 +25,11 @@ class ProductDataSource @Inject constructor(private val service : ProductDataSer
                 errorResponseRemote?.let {
                     it.message?.let { msg ->
                         emit(ApiResponseResult.error(msg, result.code().toString()))
+                    } ?: kotlin.run {
+                        emit(ApiResponseResult.error("Server Error", result.code().toString()))
                     }
                 }
             }
         }
-    }
-    fun logout(){
-
     }
 }

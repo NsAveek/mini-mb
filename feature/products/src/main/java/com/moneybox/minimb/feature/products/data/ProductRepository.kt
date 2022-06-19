@@ -5,12 +5,8 @@ import com.moneybox.minimb.network.ApiResponseResult
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class ProductRepository @Inject constructor(private val loginDataSource: ProductDataSource) {
-    suspend fun login(userMap : HashMap<String, String>): Flow<ApiResponseResult<AllProductsResponse>> {
-        return loginDataSource.login(userMap)
-    }
-    fun logout() {
-//        user = null
-        loginDataSource.logout()
+class ProductRepository @Inject constructor(private val productDataSource: ProductDataSource) {
+    suspend fun fetchPlan(): Flow<ApiResponseResult<AllProductsResponse>> {
+        return productDataSource.fetchPlanValue()
     }
 }
