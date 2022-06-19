@@ -16,9 +16,9 @@ android {
         versionCode 1
         versionName "8.35.0"
 
-        buildConfigField "String", "BASE_URL", baseUrl
-        buildConfigField "String", "API_VERSION", apiVersion
-        buildConfigField "String", "APP_ID", appId
+//        buildConfigField "String", "BASE_URL", baseUrl
+//        buildConfigField "String", "API_VERSION", apiVersion
+//        buildConfigField "String", "APP_ID", appId
     }
 
     buildTypes {

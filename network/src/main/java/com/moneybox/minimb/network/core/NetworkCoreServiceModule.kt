@@ -2,6 +2,7 @@ package com.moneybox.minimb.network.core
 
 
 import com.google.gson.GsonBuilder
+import com.moneybox.minimb.network.BuildConfig
 import com.moneybox.minimb.network.ILogger
 import com.moneybox.minimb.network.LoggerNetworkModule
 import com.moneybox.minimb.network.core.INetworkCoreDataService.Companion.BASE_URL
@@ -33,11 +34,10 @@ object NetworkCoreServiceModule {
         logger.level = HttpLoggingInterceptor.Level.BASIC
 
         val clientBuilder = OkHttpClient.Builder()
-            .addInterceptor(logger)
+            .addInterceptor(NoAuthenticationInterceptor())
             .connectTimeout(1, TimeUnit.MINUTES)
             .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(15, TimeUnit.SECONDS)
-//            .addInterceptor(TokenInterceptor(sharedPreferences))
             .build()
         val gson = GsonBuilder()
             .setLenient()
