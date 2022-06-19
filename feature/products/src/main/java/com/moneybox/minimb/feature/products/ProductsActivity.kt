@@ -44,6 +44,7 @@ class ProductsActivity : AppCompatActivity() {
                         binding.tvPlanValue.text = response.data?.let {
                             it.totalPlanValue.toString()
                         }
+                        binding.progressbarProducts.visibility = View.GONE
                     }
                     ApiResponseResult.Status.ERROR ->{
                         binding.progressbarProducts.visibility = View.GONE

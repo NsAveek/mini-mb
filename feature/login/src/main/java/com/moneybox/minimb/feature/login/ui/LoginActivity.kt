@@ -53,7 +53,6 @@ class LoginActivity : AppCompatActivity() {
             })
             loginResult.observe(this@LoginActivity, Observer{ response->
 
-                Toast.makeText(this@LoginActivity, "Login Clicked", Toast.LENGTH_LONG).show()
                 when(response.status){
                     ApiResponseResult.Status.SUCCESS ->{
                         loginViewModel.storeLoginResponse(response.data)

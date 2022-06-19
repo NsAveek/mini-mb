@@ -19,10 +19,10 @@ class NoAuthenticationInterceptor : Interceptor {
     }
 
     companion object {
-        private const val APP_ID_HEADER_NAME = "AppId"
-        private const val API_VERSION_HEADER_NAME = "ApiVersion"
-        private const val APP_VERSION_HEADER_NAME = "AppVersion"
-        private const val CONTENT_HEADER_NAME = "ContentDetail-Type"
-        private const val CONTENT_HEADER_VALUE = "application/json"
+        internal const val APP_ID_HEADER_NAME = "AppId"
+        internal const val API_VERSION_HEADER_NAME = "ApiVersion"
+        internal const val APP_VERSION_HEADER_NAME = "AppVersion"
+        internal const val CONTENT_HEADER_NAME = "ContentDetail-Type"
+        internal const val CONTENT_HEADER_VALUE = "application/json"
     }
 }
