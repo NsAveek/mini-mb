@@ -7,14 +7,29 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-
-    <style name="RoundedCorners" parent="">
-        <item name="android:bottomRightRadius">10dp</item>
-        <item name="android:bottomLeftRadius">10dp</item>
-        <item name="android:topLeftRadius">10dp</item>
-        <item name="android:topRightRadius">10dp</item>
-    </style>
     <style name="AppTheme.AppBarOverlay" parent="Theme.MoneyBox">
         <item name="android:background">@color/transparent</item>
     </style>
+
+    <style name="base_layout_theme" parent="Theme.MoneyBox">
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/secondary</item>
+        <item name="android:layout_marginLeft">@dimen/default_left_margin</item>
+        <item name="android:layout_marginRight">@dimen/default_right_margin</item>
+        <item name="android:layout_marginTop">@dimen/default_top_margin</item>
+        <item name="android:layout_marginBottom">@dimen/default_bottom_margin</item>
+    </style>
+    <style name="header_style" parent="base_layout_theme">
+        <item name="android:textSize">@dimen/header_text_size</item>
+        <item name="android:textColor">@color/teal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="sub_header_style" parent="base_layout_theme">
+        <item name="android:textSize">@dimen/sub_header_text_size</item>
+        <item name="android:textColor">@color/teal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

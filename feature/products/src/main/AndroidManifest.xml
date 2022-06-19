@@ -4,9 +4,8 @@
 
     <application>
         <activity
-            android:name=".ProductsActivity"
-            android:exported="false"
-            android:theme="@style/Theme.MoneyBox">
+            android:name="com.moneybox.minimb.feature.products.presentation.products.ProductsActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.moneybox.minimb.feature.products.open"/>
                 <category android:name="android.intent.category.DEFAULT" />

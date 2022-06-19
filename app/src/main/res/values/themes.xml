@@ -7,15 +7,23 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-
-    <style name="RoundedCorners" parent="">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSizeTopRight">0dp</item>
-        <item name="cornerSizeTopLeft">0dp</item>
-        <item name="cornerSizeBottomRight">20dp</item>
-        <item name="cornerSizeBottomLeft">20dp</item>
-    </style>
     <style name="AppTheme.AppBarOverlay" parent="Theme.MoneyBox">
         <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="base_layout_theme" parent="Theme.MoneyBox">
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/secondary</item>
+        <item name="android:layout_marginLeft">@dimen/default_left_margin</item>
+        <item name="android:layout_marginRight">@dimen/default_right_margin</item>
+        <item name="android:layout_marginTop">@dimen/default_top_margin</item>
+        <item name="android:layout_marginBottom">@dimen/default_bottom_margin</item>
+    </style>
+    <style name="button_style">
+        <item name="android:textSize">@dimen/login_text_size</item>
+        <item name="android:minHeight">@dimen/default_button_height</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/primary</item>
     </style>
 </resources>

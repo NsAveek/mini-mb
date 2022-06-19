@@ -2,7 +2,7 @@ package com.moneybox.minimb.feature.login.data
 
 import com.google.gson.Gson
 import com.moneybox.minimb.feature.login.api.LoginDataService
-import com.moneybox.minimb.feature.login.models.LoginResponse
+import com.moneybox.minimb.feature.login.domain.models.LoginResponse
 import com.moneybox.minimb.network.ApiResponseResult
 import com.moneybox.minimb.network.ErrorResponseRemote
 import kotlinx.coroutines.flow.Flow

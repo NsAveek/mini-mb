@@ -2,6 +2,7 @@
 <resources>
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#34C9BE</color>
-    <color name="secondary">#176C86</color>
+    <color name="secondary">#03869A</color>
+    <color name="teal">#176C86</color>
     <color name="transparent">#00000000</color>
 </resources>

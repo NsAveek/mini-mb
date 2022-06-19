@@ -26,7 +26,6 @@ class TokenInterceptor @Inject constructor(val sharedPreferences: SharedPreferen
             .addHeader(API_VERSION_HEADER_NAME, API_VERSION)
             .addHeader(APP_VERSION_HEADER_NAME, VERSION_NAME)
             .addHeader(CONTENT_HEADER_NAME, CONTENT_HEADER_VALUE)
-        // If token has been saved, add it to the request
         sessionManager?.let {
             requestBuilder.addHeader(APP_AUTHORIZATION_HEADER_NAME, "Bearer $it")
         }

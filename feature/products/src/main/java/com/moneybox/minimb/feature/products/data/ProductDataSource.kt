@@ -2,7 +2,7 @@ package com.moneybox.minimb.feature.products.data
 
 import com.google.gson.Gson
 import com.moneybox.minimb.feature.products.api.ProductDataService
-import com.moneybox.minimb.feature.products.model.AllProductsResponse
+import com.moneybox.minimb.feature.products.domain.model.AllProductsResponse
 import com.moneybox.minimb.network.ApiResponseResult
 import com.moneybox.minimb.network.ErrorResponseRemote
 import kotlinx.coroutines.flow.Flow

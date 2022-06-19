@@ -7,11 +7,11 @@
 
         <variable
             name="handler"
-            type="com.moneybox.minimb.feature.login.utilities.LoginActivityHandler" />
+            type="com.moneybox.minimb.feature.login.domain.utilities.LoginActivityHandler" />
 
         <variable
             name="viewModel"
-            type="com.moneybox.minimb.feature.login.ui.LoginViewModel" />
+            type="com.moneybox.minimb.feature.login.presentation.login.LoginViewModel" />
 
     </data>
 
@@ -37,37 +37,38 @@
         android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toTopOf="@+id/et_password"
         app:layout_constraintTop_toTopOf="parent"
-        android:hint="Email"
-        app:layout_constraintVertical_bias="1.0" />
+        android:hint="@string/text_email"
+        style="@style/edittext_style"
+        app:layout_constraintVertical_bias="1.0"
+        android:inputType="text"
+        android:text="@={viewModel.email}"
+        android:afterTextChanged="@{(edible)->handler.emailValidator(edible)}"
+        />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/et_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:hint="@string/text_password"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/edittext_style"
+        android:inputType="textPassword"
+        android:text="@={viewModel.password}"
+        android:afterTextChanged="@{(edible)->handler.passwordValidator(edible)}"/>
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary"
         android:onClick="@{() ->viewModel.triggerLogin()}"
-        android:minHeight="@dimen/default_button_height"
-        android:layout_marginStart="@dimen/default_left_margin"
-        android:layout_marginEnd="@dimen/default_right_margin"
-        android:layout_marginBottom="@dimen/default_bottom_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         android:text="@string/text_login"
-        android:textColor="@color/white"
-        android:textSize="@dimen/login_text_size"
-        android:gravity="center"
-        style="@style/RoundedCorners">
+        style="@style/button_style">
 
 
     </Button>

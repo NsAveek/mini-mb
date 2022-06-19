@@ -1,6 +1,6 @@
 package com.moneybox.minimb.feature.products.data
 
-import com.moneybox.minimb.feature.products.model.AllProductsResponse
+import com.moneybox.minimb.feature.products.domain.model.AllProductsResponse
 import com.moneybox.minimb.network.ApiResponseResult
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
