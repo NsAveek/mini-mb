@@ -1,4 +1,4 @@
-package com.moneybox.minimb.feature.login
+package com.moneybox.minimb.feature.login.utilities
 
 import android.text.TextUtils
 import android.text.Editable

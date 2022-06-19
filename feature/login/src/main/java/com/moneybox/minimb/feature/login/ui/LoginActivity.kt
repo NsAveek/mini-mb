@@ -8,7 +8,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
-import com.moneybox.minimb.feature.login.LoginActivityHandler
+import com.moneybox.minimb.feature.login.utilities.LoginActivityHandler
 import com.moneybox.minimb.feature.login.R
 import com.moneybox.minimb.feature.login.databinding.ActivityLoginBinding
 import com.moneybox.minimb.feature.login.utilities.Utils.isNetworkAvailable
