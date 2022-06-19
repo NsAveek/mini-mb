@@ -1,14 +1,26 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
+    kapt {
+        correctErrorTypes = true
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
 
     implementation project(':libraries:uiComponents')
+    kapt Deps.androidx_hilt_kapt
 
     api Deps.androidx_retrofit
     api Deps.androidx_retrofit_gson_conv

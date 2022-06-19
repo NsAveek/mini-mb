@@ -1,18 +1,28 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
     buildFeatures {
         dataBinding true
     }
+    kapt {
+        correctErrorTypes = true
+    }
 }
 
 dependencies {
     implementation project(':network')
     implementation project(':libraries:uiComponents')
+
+    implementation Deps.androidx_hilt
+    implementation Deps.androidx_hilt_navigation
+    kapt Deps.androidx_hilt_kapt
 }

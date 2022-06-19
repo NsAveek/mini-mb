@@ -35,7 +35,7 @@ object Versions {
     // </editor-fold>
 
     // <editor-fold desc="hilt">
-    val hilt_version = "2.40"
+    val hilt_version = "2.42"
     val hilt_nav_compose_version = "1.0.0"
     // </editor-fold>
 

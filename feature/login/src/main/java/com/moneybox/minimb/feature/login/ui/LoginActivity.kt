@@ -6,7 +6,6 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.navigation.ui.AppBarConfiguration
 import com.google.android.material.snackbar.Snackbar
 import com.moneybox.minimb.feature.login.LoginActivityHandler
 import com.moneybox.minimb.feature.login.R
@@ -19,9 +18,9 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityLoginBinding
-//    @Inject lateinit var logger : ILogger
+    @Inject
+    lateinit var logger : ILogger
 
 
     private val loginViewModel : LoginViewModel by viewModels()
@@ -34,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
             handler = LoginActivityHandler(this)
         }
         setContentView(binding.root)
-//        logger.debug(message = "Log In View Created")
+        logger.debug(message = "Log In View Created")
 
         observeViewModelResponse()
 
