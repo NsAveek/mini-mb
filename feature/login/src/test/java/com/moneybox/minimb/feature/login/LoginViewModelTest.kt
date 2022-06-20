@@ -108,7 +108,7 @@ class LoginViewModelTest {
                 put(email, "")
                 put(password, "")
             }
-            Mockito.`when`(loginRepository.login(userMap)).thenReturn(flowOf(ApiResponseResult.success(loginResponse)))
+//            Mockito.`when`(loginRepository.login(userMap)).thenReturn(flowOf(ApiResponseResult.success(loginResponse)))
             with(loginViewModel){
                 login()
                 Assert.assertNull(loginResult.value)

@@ -27,12 +27,11 @@ dependencies {
     kapt Deps.androidx_hilt_kapt
 
     testImplementation (Deps.testlib_junit)
-    testImplementation "androidx.arch.core:core-testing:2.1.0"
-    testImplementation 'org.mockito:mockito-core:4.5.1'
-    testImplementation 'org.mockito:mockito-inline:2.13.0'
-    androidTestImplementation("org.mockito:mockito-android:4.5.1")
-    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.1'
-    testImplementation "android.arch.core:core-testing:1.1.1"
+    testImplementation (Deps.core_testing)
+    testImplementation (Deps.testlib_mockito)
+    testImplementation (Deps.mockito_inline_testing)
+    androidTestImplementation(Deps.mockito_android_testing)
+    testImplementation (Deps.coroutine_testing)
     androidTestImplementation (Deps.testandroidx_runner)
     androidTestImplementation (Deps.testandroidx_espressocore)
 }
