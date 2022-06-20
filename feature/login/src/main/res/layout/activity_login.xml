@@ -25,37 +25,56 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/moneybox_logo"
-        app:layout_constraintBottom_toTopOf="@+id/et_email"
+        app:layout_constraintBottom_toTopOf="@+id/email_text_input_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/et_email"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_text_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/et_password"
-        app:layout_constraintTop_toTopOf="parent"
-        android:hint="@string/text_email"
         style="@style/edittext_style"
-        app:layout_constraintVertical_bias="1.0"
-        android:inputType="text"
-        android:text="@={viewModel.email}"
-        android:afterTextChanged="@{(edible)->handler.emailValidator(edible)}"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/password_text_input_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" >
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/et_password"
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_email"
+            style="@style/edittext_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:afterTextChanged="@{(editable)->handler.emailValidator(editable)}"
+            android:hint="@string/text_email"
+            android:inputType="text"
+            android:text="@={viewModel.email}"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_text_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/text_password"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         style="@style/edittext_style"
-        android:inputType="textPassword"
-        android:text="@={viewModel.password}"
-        android:afterTextChanged="@{(edible)->handler.passwordValidator(edible)}"/>
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/secondary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_password"
+            style="@style/edittext_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:afterTextChanged="@{(editable)->handler.passwordValidator(editable)}"
+            android:hint="@string/text_password"
+            android:inputType="textPassword"
+
+            android:text="@={viewModel.password}" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_login"
@@ -81,7 +100,7 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+        app:layout_constraintTop_toBottomOf="@+id/password_text_input_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -25,6 +25,8 @@ class LoginDataSource @Inject constructor(private val service : LoginDataService
                 errorResponseRemote?.let {
                     it.message?.let { msg ->
                         emit(ApiResponseResult.error(msg, result.code().toString()))
+                    } ?: kotlin.run {
+                        emit(ApiResponseResult.error("Server Error", result.code().toString()))
                     }
                 }
             }

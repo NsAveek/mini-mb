@@ -11,11 +11,8 @@ class LoginActivityHandler (val binding : ActivityLoginBinding){
     fun passwordValidator(editable: Editable) {
         with(binding){
             if (etPassword == null) return
-            val minimumLength = 5
-            if (!TextUtils.isEmpty(editable.toString()) && editable.length < minimumLength) {
-                etPassword.error = "Password must be minimum $minimumLength length"
-            } else {
-                etPassword.error = null
+            if (TextUtils.isEmpty(editable.toString())) {
+                etPassword.error = binding.root.resources.getString(R.string.error_empty_password)
             }
         }
     }

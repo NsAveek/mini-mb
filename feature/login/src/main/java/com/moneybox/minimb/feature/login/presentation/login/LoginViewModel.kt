@@ -1,6 +1,7 @@
 package com.moneybox.minimb.feature.login.presentation.login
 
 import android.content.SharedPreferences
+import android.text.TextUtils
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -33,6 +34,7 @@ class LoginViewModel @Inject constructor(private val loginRepository: LoginRepos
     val password = MutableLiveData<String>("")
 
     fun login(){
+
         val userMap = HashMap<String, String>()
         userMap["email"] = email.value!!
         userMap["password"] = password.value!!
@@ -68,5 +70,8 @@ class LoginViewModel @Inject constructor(private val loginRepository: LoginRepos
         } ?: kotlin.run {
             _loginResultStored.value = false
         }
+    }
+    fun isValid() : Boolean{
+        return !TextUtils.isEmpty(email.value) && !TextUtils.isEmpty(password.value)
     }
 }

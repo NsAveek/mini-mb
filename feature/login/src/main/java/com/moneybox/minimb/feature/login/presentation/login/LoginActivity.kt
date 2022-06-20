@@ -43,10 +43,22 @@ class LoginActivity : AppCompatActivity() {
         with(loginViewModel){
             loginClick.observe(this@LoginActivity, Observer {
                 if (it){
-                    if (isNetworkAvailable(this@LoginActivity)) {
-                        login()
+                    if(this.isValid()) {
+                        if (isNetworkAvailable(this@LoginActivity)) {
+                            login()
+                        } else {
+                            Snackbar.make(
+                                binding.root,
+                                getString(R.string.no_internet),
+                                Snackbar.LENGTH_LONG
+                            ).show()
+                        }
                     }else{
-                        Snackbar.make(binding.root, getString(R.string.no_internet), Snackbar.LENGTH_LONG).show()
+                        Snackbar.make(
+                            binding.root,
+                            getString(R.string.empty_fields),
+                            Snackbar.LENGTH_LONG
+                        ).show()
                     }
                 }
             })
