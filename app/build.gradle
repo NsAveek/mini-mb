@@ -53,17 +53,14 @@ dependencies {
     implementation project(':libraries:uiComponents')
 
 //    // HILT - Needs to be present in each modules individually
-//
+
     implementation Deps.androidx_hilt
     implementation Deps.androidx_hilt_navigation
     kapt Deps.androidx_hilt_kapt
 
-//    implementation Deps.androidx_core
-//    implementation Deps.androidx_retrofit
-//    implementation Deps.androidx_retrofit_gson_conv
-//    implementation Deps.gson_version
-
-
-//    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
-//    implementation 'androidx.appcompat:appcompat:1.4.1'
+    testImplementation (Deps.testlib_junit)
+    testImplementation 'org.mockito:mockito-core:2.25.0'
+    testImplementation 'org.mockito:mockito-inline:2.13.0'
+    androidTestImplementation (Deps.testandroidx_runner)
+    androidTestImplementation (Deps.testandroidx_espressocore)
 }

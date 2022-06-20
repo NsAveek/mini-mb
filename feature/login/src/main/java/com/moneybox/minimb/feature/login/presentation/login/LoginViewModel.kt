@@ -16,8 +16,6 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 
-/*Email: jaeren+androidtest@moneyboxapp.com
-       Password: P455word12*/
 @HiltViewModel
 class LoginViewModel @Inject constructor(private val loginRepository: LoginRepository, private val sharedPreferences: SharedPreferences) : ViewModel() {
 
@@ -72,6 +70,6 @@ class LoginViewModel @Inject constructor(private val loginRepository: LoginRepos
         }
     }
     fun isValid() : Boolean{
-        return !TextUtils.isEmpty(email.value) && !TextUtils.isEmpty(password.value)
+        return email.value!="" && password.value!=""
     }
 }

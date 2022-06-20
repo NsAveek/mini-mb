@@ -53,6 +53,8 @@ dependencies {
 
 
     testImplementation (Deps.testlib_junit)
+    testImplementation 'org.mockito:mockito-core:2.25.0'
+    testImplementation 'org.mockito:mockito-inline:2.13.0'
     androidTestImplementation (Deps.testandroidx_runner)
     androidTestImplementation (Deps.testandroidx_espressocore)
 }
